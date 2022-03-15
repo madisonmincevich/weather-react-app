@@ -1,3 +1,27 @@
 .Weather {
   border: 1px solid black;
+  margin: 30px auto;
+  max-width: 600px;
+  padding: 20px;
+}
+
+.Weather ul {
+  padding: 0px;
+}
+
+.Weather li {
+  list-style: none;
+  text-transform: capitalize;
+}
+
+.Weather .temperature {
+  font-size: 60px;
+  line-height: 55px;
+  float: left;
+}
+
+.Weather img {
+  line-height: 64px;
+
+  float: left;
 }
