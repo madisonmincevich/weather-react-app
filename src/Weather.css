@@ -18,10 +18,10 @@
   font-size: 60px;
   line-height: 55px;
   float: left;
+  margin-left: 15px;
 }
 
-.Weather img {
+.Weather .Icon {
   line-height: 64px;
-
   float: left;
 }

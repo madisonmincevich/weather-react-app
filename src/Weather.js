@@ -2,6 +2,7 @@ import React, { useState } from "react";
 import "./Weather.css";
 import axios from "axios";
 import WeatherInfo from "./WeatherInfo.js";
+import { RotatingLines } from "react-loader-spinner";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -15,7 +16,7 @@ export default function Weather(props) {
       wind: response.data.wind.speed,
       city: response.data.name,
       description: response.data.weather[0].description,
-      iconUrl: "https://ssl.gstatic.com/onebox/weather/64/partly_cloudy.png",
+      icon: response.data.weather[0].icon,
       date: new Date(response.data.dt * 1000),
     });
   }
@@ -62,6 +63,16 @@ export default function Weather(props) {
     );
   } else {
     search();
-    return "Loading...";
+    return (
+      <div className="loader text-center m-5 p-5">
+        <RotatingLines
+          width="100"
+          strokeColor="black"
+          strokeWidth="1"
+          animationDuration="3"
+        />
+        <div className="loading">Loading...</div>
+      </div>
+    );
   }
 }
