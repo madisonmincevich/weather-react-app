@@ -46,6 +46,11 @@
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }
 
+.Weather .btn:hover {
+  color: #a3f7bf;
+  transition: ease-in-out;
+}
+
 .Weather input {
   box-shadow: 10px 10px 20px rgba(0, 0, 0, 0.2);
 }

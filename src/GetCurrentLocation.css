@@ -1,0 +1,8 @@
+.GetCurrentLocation .btn .Locationicon:hover {
+  color: #044343;
+  transition: ease-in-out;
+}
+
+.GetCurrentLocation .btn {
+  background-color: #82dda0;
+}

@@ -4,6 +4,7 @@ import axios from "axios";
 import WeatherInfo from "./WeatherInfo.js";
 import { RotatingLines } from "react-loader-spinner";
 import WeatherForecast from "./WeatherForecast.js";
+import GetCurrentLocation from "./GetCurrentLocation.js";
 
 export default function Weather(props) {
   const [city, setCity] = useState(props.defaultCity);
@@ -37,12 +38,23 @@ export default function Weather(props) {
     axios.get(apiUrl).then(handleResponse);
   }
 
+  function displayPosition(position) {
+    let apiKey = "eb98e4302ac840d8fb104f13e5058252";
+    let apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${position.coords.latitude}&lon=${position.coords.longitude}&appid=${apiKey}&units=imperial`;
+    axios.get(apiUrl).then(handleResponse);
+  }
+
+  function getLocation(event) {
+    event.preventDefault();
+    navigator.geolocation.getCurrentPosition(displayPosition);
+  }
+
   if (weatherData.ready) {
     return (
       <div className="Weather">
         <form onSubmit={handleSubmit}>
           <div className="row">
-            <div className="col-sm-9">
+            <div className="col-sm-7">
               <input
                 type="search"
                 placeholder="Type a city..."
@@ -52,6 +64,9 @@ export default function Weather(props) {
             </div>
             <div className="col-sm-3">
               <input type="submit" placeholder="Search" className="btn w-100" />
+            </div>
+            <div className="col-sm-2">
+              <GetCurrentLocation getLocation={getLocation} />
             </div>
           </div>
         </form>
