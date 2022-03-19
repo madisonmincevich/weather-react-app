@@ -25,53 +25,19 @@
   margin-left: 15px;
 }
 
-@media (max-width: 740px) {
-  .Weather .temperature {
-    font-size: 40px;
-    margin: 0px;
-  }
-
-  .Weather .units {
-    font-size: 5px;
-  }
-
-  .Weather .btn {
-    font-size: 13px;
-    padding: 8px;
-  }
-}
-
-@media (max-width: 600px) {
-  .Weather .btn {
-    font-size: 10px;
-    padding-right: 10px;
-  }
-
-  .Weather .temperature {
-    font-weight: bold;
-    margin-left: 10px;
-  }
-
-  .Weather .units {
-    float: right;
-    margin-right: 0px;
-    font-size: 15px;
-  }
-
-  .WeatherForecast-temperatures {
-    margin: 30px;
-  }
-}
-
-@media (max-width: 900px) {
-  .WeatherForecast-temperatures {
-    font-size: 20px;
-  }
-}
-
 .Weather .Icon {
   line-height: 64px;
   float: left;
+}
+
+@media (max-width: 900px) {
+  .Weather h1 {
+    text-align: center;
+  }
+
+  .Weather .btn {
+    margin-top: 10px;
+  }
 }
 
 .Weather .btn {
