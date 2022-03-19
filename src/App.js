@@ -15,7 +15,15 @@ function App() {
           >
             Open sourced code
           </a>{" "}
-          by Maddie Mincevich
+          by{" "}
+          <a
+            href="https://stupefied-poitras-c9d7d8.netlify.app/"
+            alt=""
+            target="_blank"
+            rel="noreferrer"
+          >
+            Maddie Mincevich
+          </a>
         </footer>
       </div>
     </div>
